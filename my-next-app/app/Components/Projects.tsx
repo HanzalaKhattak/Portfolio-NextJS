@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import project1 from '../assets/MUI.png';
@@ -6,6 +8,7 @@ import project3 from '../assets/SMH.png';
 import project4 from '../assets/Project4.png';
 import project5 from '../assets/ECOM.png';
 import project6 from '../assets/IM.png';
+import { motion } from 'framer-motion';
 
 const projectData = [
   {
@@ -56,18 +59,54 @@ const projectData = [
 ];
 
 const Projects = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.1,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <div className='border-neutral-900 pb-24'>
-      <h2 className='my-20   text-center text-4xl font-bold'>Projects</h2>
+      <motion.h2 
+        className='my-20 text-center text-4xl font-bold'
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Projects
+      </motion.h2>
 
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 px-4'>
         {projectData.map((project, index) => (
-          <div
+          <motion.div
             key={index}
-            className='bg-white text-white rounded-2xl shadow-lg p-4 hover:shadow-2xl transition-shadow duration-300 w-full mx-auto flex flex-col justify-between h-full'
+            className='bg-white text-white rounded-2xl shadow-lg p-4 w-full mx-auto flex flex-col justify-between h-full'
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ 
+              y: -10, 
+              scale: 1.02,
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
+              transition: { duration: 0.3 }
+            }}
           >
             <div>
-              <div className=' flex items-center justify-center'>
+              <motion.div 
+                className=' flex items-center justify-center'
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   src={project.image}
                   alt={project.alt}
@@ -75,7 +114,7 @@ const Projects = () => {
                   height={600}
                   className='border-black h-auto w-full object-contain'
                 />
-              </div>
+              </motion.div>
 
               <h3 className='text-xl text-black font-semibold mb-2'>{project.title}</h3>
 
@@ -91,7 +130,7 @@ const Projects = () => {
             >
               Opens the live project in a new tab.
             </a> */}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

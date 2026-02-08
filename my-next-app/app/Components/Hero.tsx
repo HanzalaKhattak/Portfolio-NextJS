@@ -1,20 +1,68 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import bgmain from '../assets/bgmain.webp';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   return (
     <div className='border-b border-neutral-900 pb-4 lg:mb-35'>
         <div className='flex flex-wrap justify-center items-center'>
-            <div className='w-full lg:w-1/2'>
+            <motion.div 
+              className='w-full lg:w-1/2'
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
                 <div className='flex flex-wrap items-center lg:items-start'>
-                    <h1 className='pb-5 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-thin tracking-tight'>
-                        M. Hanzala Dawood</h1>
-                   <span 
+                    <motion.h1 
+                      variants={itemVariants}
+                      className='pb-5 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-thin tracking-tight'
+                    >
+                        M. Hanzala Dawood
+                    </motion.h1>
+                   <motion.span 
+                    variants={itemVariants}
                     className='bg-linear-to-r from-pink-300 via-slate-500 to-purple-500 
-                    bg-clip-text text-4xl tracking-tight text-transparent font-bold'>MERN Stack Developer</span>
-                    <p
-                    className='my-2 max-w-xl py-4 tracking-tighter'>A results-driven Full Stack Developer specializing in the MERN stack, 
+                    bg-clip-text text-4xl tracking-tight text-transparent font-bold'
+                   >
+                    MERN Stack Developer
+                   </motion.span>
+                    <motion.p
+                    variants={itemVariants}
+                    className='my-2 max-w-xl py-4 tracking-tighter'
+                    >
+                    A results-driven Full Stack Developer specializing in the MERN stack, 
                     with proven expertise in architecting and delivering scalable, high-performance web applications. 
                     Proficient in modern frontend technologies including React.js, Tailwind CSS, and Bootstrap, alongside 
                     robust backend development using Node.js, Express.js, and MongoDB. Demonstrated ability to create 
@@ -22,12 +70,21 @@ const Hero = () => {
                     optimized database architectures. Known for strong problem-solving capabilities, collaborative teamwork, 
                     and a commitment to clean, maintainable code. Actively engaged in continuous learning and open-source 
                     contributions to stay at the forefront of emerging web technologies.
-                    </p>
+                    </motion.p>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className='w-full lg:w-1/2 lg:py-8 '>
-            <div className='flex justify-end'>
+            <motion.div 
+              className='w-full lg:w-1/2 lg:py-8'
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+            >
+            <motion.div 
+              className='flex justify-end'
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
                 <Image
                     src={bgmain} 
                     alt="M. Hanzala Dawood" 
@@ -35,8 +92,8 @@ const Hero = () => {
                     height={400}
                     className='w-[400px] h-[400px]'
                 />
-            </div>
-            </div>
+            </motion.div>
+            </motion.div>
         </div>
     </div>
   )

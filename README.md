@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with Next.js 16, React 19, and Tail
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://hanzala-khan.vercel.app/)
+[View Live Portfolio](https://mhk-lac.vercel.app)
 
 ## 📋 Table of Contents
 

@@ -1,16 +1,36 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import about from '../assets/UpworkProfile.jpg';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
     <div className='border-b border-neutral-900 pb-4'>
-      <h1 className='my-20 text-center text-4xl font-bold'>About &nbsp;
-        <span className='text-neutral-500'>Me </span></h1>
+      <motion.h1 
+        className='my-20 text-center text-4xl font-bold'
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        About &nbsp;
+        <span className='text-neutral-500'>Me </span>
+      </motion.h1>
         <div className='flex flex-wrap justify-center items-center'>
-            <div 
-            className='w-full lg:w-[40%] lg:py-8'>
-                <div className='flex items-center justify-start'>
+            <motion.div 
+            className='w-full lg:w-[40%] lg:py-8'
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            >
+                <motion.div 
+                  className='flex items-center justify-start'
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  transition={{ duration: 0.3 }}
+                >
                     <Image 
                       className='rounded-2xl h-[400px] w-[400px] object-fill' 
                       src={about} 
@@ -18,11 +38,16 @@ const About = () => {
                       width={400}
                       height={400}
                     />
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
-            <div
-            className='w-full lg:w-[50%]'>
+            <motion.div
+            className='w-full lg:w-[50%]'
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            >
                     <div className='flex justify-center'>
                         <p className='my-2 py-6 text-justify'>
                             As a growth-oriented developer, I bring a proven track record of rapidly adapting to 
@@ -36,7 +61,7 @@ const About = () => {
                             alignment with organizational vision to deliver measurable results.
                         </p>
                     </div>
-                </div>
+            </motion.div>
         </div>
     </div>
   )
