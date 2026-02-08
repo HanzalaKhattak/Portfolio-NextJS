@@ -8,7 +8,7 @@ import project3 from '../assets/SMH.png';
 import project4 from '../assets/Project4.png';
 import project5 from '../assets/ECOM.png';
 import project6 from '../assets/IM.png';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 
 const projectData = [
   {
@@ -67,7 +67,7 @@ const Projects = () => {
       transition: {
         duration: 0.5,
         delay: i * 0.1,
-        ease: "easeOut"
+        ease: easeOut
       }
     })
   };
