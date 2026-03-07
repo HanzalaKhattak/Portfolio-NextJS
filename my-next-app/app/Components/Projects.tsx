@@ -12,41 +12,41 @@ import { motion, easeOut } from 'framer-motion';
 
 const projectData = [
   {
-    title: 'Material UI Project',
+    title: 'Material UI Wireframe',
     description:
-      'This is an E-commerce Project completely made with Material UI.',
+      'This is an E-commerce Project Wireframe completely made with Material UI.',
     image: project1,
     alt: 'MUI Project',
-    link: 'https://avicennaenterprise.com/',
+    // link: 'https://avicennaenterprise.com/',
   },
-  {
-    title: 'EncoderBytes Pvt Ltd',
-    description: `Enhanced the company website of EncoderBytes Pvt Ltd.`,
-    image: project2,
-    alt: 'EncoerBytes',
-    link: 'https://aitoolfind.co/',
-  },
+  // {
+  //   title: 'EncoderBytes Pvt Ltd',
+  //   description: `Enhanced the company website of EncoderBytes Pvt Ltd.`,
+  //   image: project2,
+  //   alt: 'EncoerBytes',
+  //   // link: 'https://aitoolfind.co/',
+  // },
   {
     title: 'Smart HealthConnect',
     description:
       'Developed an AI and Location based Doctor Finding and Appointent System.',
     image: project3,
     alt: 'SMH',
-    link: 'https://studystudio.jerrizz.com/',
+    // link: 'https://studystudio.jerrizz.com/',
   },
   {
     title: 'Planto Website',
     description: `Plant-store eCommerce site with cart, checkout, and admin dashboard.`,
     image: project4,
     alt: 'Planto Project',
-    link: 'https://planto-project-9814.vercel.app/',
+    // link: 'https://planto-project-9814.vercel.app/',
   },
   {
     title: 'HBK',
-    description: `E-Commerce Website for HBK, Pakistan.`,
+    description: `E-commerce website with user authentication and product management.`,
     image: project5,
     alt: 'ECOM',
-    link: 'https://jkd-organization.vercel.app/',
+    // link: 'https://jkd-organization.vercel.app/',
   },
   {
     title: 'Insider Mediator',
@@ -54,7 +54,7 @@ const projectData = [
       'Pakistan First Cyber Mediation Platform.',
     image: project6,
     alt: 'IM',
-    link: 'https://limelight.trionex.pk/dashboard-1',
+    // link: 'https://limelight.trionex.pk/dashboard-1',
   },
 ];
 
