@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import project1 from '../assets/MUI.png';
-import project2 from '../assets/EB.png';
+// import project2 from '../assets/EB.png';
 import project3 from '../assets/SMH.png';
 import project4 from '../assets/Project4.png';
 import project5 from '../assets/ECOM.png';
